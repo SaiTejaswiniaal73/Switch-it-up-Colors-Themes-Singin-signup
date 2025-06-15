@@ -1,0 +1,89 @@
+.navbar {
+  background-color:rgb(62, 57, 57);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  color: aliceblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(3, 110, 186, 0.3);
+  padding :10px;
+}
+
+.store_name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav_links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav_span {
+  text-decoration: none; /* removes underline */
+  color: aliceblue;
+  font-size: 20px;
+  position: relative;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  border:none
+}
+
+.nav_span:hover {
+  background-color: #00bcd4; /* hover color */
+  color: navy;
+  font-weight: 600;
+}
+
+.nav_span:active {
+  background-color:rgba(35, 214, 35, 0.79); /* active click color */
+  transform: scale(0.96); /* slight press effect */
+}
+
+.nav_span::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #00bcd4;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav_span:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px;
+    align-items: flex-start;
+  }
+
+  .store_name {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav_span {
+    font-size: 16px;
+    padding: 6px 8px;
+    width: 100%;
+  }
+
+  .nav_span:hover::after {
+    width: 100%;
+  }
+}
